@@ -4,6 +4,11 @@ orbs:
   aws-cli: circleci/aws-cli@1.3.1
 jobs:
   build:
+    filters:
+      branches:
+        only:
+          - master
+          - main
     docker:
       - image: "cimg/base:stable"
     steps:
@@ -31,12 +36,3 @@ jobs:
           command: |
             npm run frontend:deploy
             npm run api:deploy
-workflows:
-  udagram:
-    jobs:
-      - build
-          filters:
-            branches:
-              only:
-                - master
-                - main
