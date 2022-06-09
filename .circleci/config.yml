@@ -55,7 +55,7 @@ jobs:
             npm run api:deploy
             
 workflows:
-  udagram:
+  build:
     jobs:
       - build
       - hold:
