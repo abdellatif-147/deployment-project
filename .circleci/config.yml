@@ -5,11 +5,6 @@ orbs:
   aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
 jobs:
   build:
-    filters:
-      branches:
-        only:
-          - master
-          - main
     docker:
       - image: "cimg/base:stable"
     steps:
