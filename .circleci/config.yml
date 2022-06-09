@@ -9,8 +9,9 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - node/install
-      - checkout
+      - eb/setup
       - aws-cli/setup
+      - checkout
       - run:
           name: Front-End Install
           command: |
@@ -33,10 +34,17 @@ jobs:
             npm run frontend:deploy
             npm run api:
 workflows:
-  jobs:
-    - build:
-      filters:
-        branches:
-          only:
-            - master
-            - main
+  udagram:
+    jobs:
+      - build
+      - hold:
+          filters:
+            branches:
+              only:
+                - main
+          type: approval
+          requires:
+            - build
+      - deploy:
+          requires:
+            - hold
