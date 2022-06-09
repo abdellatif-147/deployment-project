@@ -33,16 +33,19 @@ jobs:
           command: |
             npm run frontend:deploy
             npm run api:deploy
-workflows:
-  jobs:
+workflows: 
+  jobs: 
     - build
-        filters:
-          branches:
-            only:
+    - 
+      hold: 
+        filters: 
+          branches: 
+            only: 
               - master
-          type: approval
-          requires:
-            - build
-      - deploy:
-          requires:
-            - hold
+        requires: 
+          - build
+        type: approval
+    - 
+      deploy: 
+        requires: 
+          - hold
