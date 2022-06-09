@@ -30,7 +30,7 @@ jobs:
       id: create
       uses: atlassian/gajira-create@master
       with:
-        project: CONUPDATE
+        project: CONUPDATE 
         issuetype: Task
         summary: |
           Github PR nd0067 - Full Stack JavaScript Developer | Repo: ${{ github.repository }}  | PR# ${{github.event.number}}
