@@ -33,10 +33,10 @@ jobs:
             npm run frontend:deploy
             npm run api:
 workflows:
-    jobs:
-      - build:
-          filters:
-            branches:
-              only:
-                - master
-                - main
+  jobs:
+    - build:
+      filters:
+        branches:
+          only:
+            - master
+            - main
