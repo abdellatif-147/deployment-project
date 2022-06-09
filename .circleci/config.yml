@@ -32,7 +32,7 @@ jobs:
           name: Deploy App
           command: |
             npm run frontend:deploy
-            npm run api:
+            npm run api:deploy
 workflows:
     jobs:
       - build
