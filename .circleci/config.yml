@@ -33,7 +33,6 @@ jobs:
             npm run frontend:deploy
             npm run api:
 workflows:
-  udagram:
     jobs:
       - build
       - hold:
