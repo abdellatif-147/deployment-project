@@ -39,9 +39,9 @@ jobs:
             npm run frontend:deploy
             npm run api:deploy
 workflows:
-  jobs:
-    - build:
-        filters:
-          branches:
-            only:
-              - main
+  build:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: main
