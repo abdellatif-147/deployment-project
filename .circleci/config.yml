@@ -34,13 +34,14 @@ jobs:
             npm run frontend:deploy
             npm run api:deploy
 workflows:
+  udagram:
     jobs:
       - build
       - hold:
           filters:
             branches:
               only:
-                - main
+                - master
           type: approval
           requires:
             - build
