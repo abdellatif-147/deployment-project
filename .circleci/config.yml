@@ -35,8 +35,7 @@ jobs:
             npm run api:deploy
 workflows:
   jobs:
-    - build
-      - hold:
+    - build:
         filters:
           branches:
             only:
