@@ -42,4 +42,9 @@ workflows:
             branches:
               only:
                 - master
-                - main
+          type: approval
+          requires:
+            - build
+      - deploy:
+          requires:
+            - hold
