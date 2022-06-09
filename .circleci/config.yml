@@ -57,8 +57,14 @@ jobs:
 workflows:
   udagram:
     jobs:
-      - build:
-        filters:
-          branches:
-            only:
-              - main
+      - build
+      - hold:
+          filters:
+            branches:
+              only:
+                - main
+          type: approval
+          requires:
+            - build
+          requires:
+            - deploy
