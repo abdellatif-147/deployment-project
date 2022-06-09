@@ -49,7 +49,7 @@ jobs:
           name: Deploy FE
           command: |
             npm run frontend:deploy
-        - run:
+      - run:
           name: Deploy BE
           command: |
             npm run api:deploy
