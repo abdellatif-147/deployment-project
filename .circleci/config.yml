@@ -35,7 +35,6 @@ workflows:
   udagram:
     jobs:
       - build
-      - hold:
           filters:
             branches:
               only:
