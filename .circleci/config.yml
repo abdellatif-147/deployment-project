@@ -30,3 +30,14 @@ jobs:
           name: Deploy App
           command: |
             npm run frontend:deploy
+            npm run api:deploy
+workflows:
+  udagram:
+    jobs:
+      - build
+      - hold:
+          filters:
+            branches:
+              only:
+                - master
+                - main
