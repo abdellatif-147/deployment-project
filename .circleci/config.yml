@@ -34,7 +34,7 @@ jobs:
             npm run api:
 workflows:
     jobs:
-      - build
+      - build:
           filters:
             branches:
               only:
