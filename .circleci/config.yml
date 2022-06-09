@@ -10,6 +10,7 @@ jobs:
     steps:
       - node/install
       - checkout
+      - eb-cli/setup
       - aws-cli/setup
       - run:
           name: Front-End Install
@@ -27,7 +28,7 @@ jobs:
           name: Back-End Build
           command: |
             npm run api:build
-      - run: 
+      - run:
           name: Deploy App
           command: |
             npm run frontend:deploy
