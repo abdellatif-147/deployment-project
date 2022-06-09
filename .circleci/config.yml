@@ -39,6 +39,7 @@ jobs:
             npm run frontend:deploy
             npm run api:deploy
 workflows:
+  build:
     jobs:
       - build:
           filters:
