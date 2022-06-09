@@ -1,6 +1,6 @@
 branch-defaults:
   main:
-    environment: null
+    environment: Deploytest-env
 global:
   application_name: deployment
   branch: null
